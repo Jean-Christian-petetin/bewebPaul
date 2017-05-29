@@ -1,0 +1,156 @@
+{% extends "Admin/base.html.twig" %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <section class="well">
+        <h1 class="text-center">Géstion des utilisateurs</h1>
+    </section>
+
+    <ol class="breadcrumb breadcrumb-arrow">
+        <li><a href="?admin/index">Home</a></li>
+        <li class=""><a href="?admin/users">Users</a></li>
+        <li class="active"><span>Index</span></li>
+    </ol>
+
+    <section id="user-add">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Ajouter un utilisateur</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Nom d'utilisateur</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Adresse email</label>
+                        <div class="col-sm-10">
+                            <input type="email" name="email" class="form-control" placeholder="vous@exemple.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Mot de passe</label>
+                        <div class="col-sm-9">
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="col-sm-1">
+                            <a href="#" id="generatePassword">Générer</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password_check" class="col-sm-2 control-label">Confirmation</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="password_check" class="form-control">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="user-invite">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Envoyer une invitation</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline" method="post">
+                    <input type="email" name="email" class="form-control" placeholder="vous@exemple.com">
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <section id="user-list">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Liste des utilisateurs</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered table-responsive">
+                            <thead>
+                            <tr>
+                                <th class="col-md-1">#</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Date</th>
+                                <th class="col-md-1 text-center">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>Qhorin</td>
+                                <td>qhorin@gmail.com</td>
+                                <td>16/05/2014 02:49</td>
+                                <td class="text-center"><i class="fa fa-pencil"></i> | <i class="fa fa-trash"></i> </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-sm-6">
+            <section id="user-list">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Liste des permissions</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered table-responsive">
+                            <thead>
+                            <tr>
+                                <th class="col-md-1">#</th>
+                                <th>Type</th>
+                                <th>Target</th>
+                                <th>Module</th>
+                                <th>Action</th>
+                                <th>Autorisé</th>
+                                <th class="col-md-1 text-center">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0</td><td>0</td><td>0</td><td>Page</td><td>View</td><td>True</td>
+                                    <td class="text-center"><i class="fa fa-pencil"></i> | <i class="fa fa-trash"></i> </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td><td>1</td><td>0</td><td>Page</td><td>View</td><td>True</td>
+                                    <td class="text-center"><i class="fa fa-pencil"></i> | <i class="fa fa-trash"></i> </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td><td>0</td><td>0</td><td>Page</td><td>Edit</td><td>True</td>
+                                    <td class="text-center"><i class="fa fa-pencil"></i> | <i class="fa fa-trash"></i> </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td><td>1</td><td>0</td><td>Page</td><td>Edit</td><td>True</td>
+                                    <td class="text-center"><i class="fa fa-pencil"></i> | <i class="fa fa-trash"></i> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <br><br>
+{%  endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="js/users-admin.js"></script>
+{% endblock %}

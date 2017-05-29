@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <meta charset="utf-8">
+    <title>Beweb {% block title %}{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+            <li><a href="?presentation/index">Accueil</a></li>
+            <li><a href="#">Formations</a></li>
+            <li><a href="?promotion/list">Promotions</a></li>
+            <li><a href="#">Actualités</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="container">
+{% block body %}{% endblock %}
+</main>
+<footer>
+
+</footer>
+
+<div id="alert-box" class="alert alert-info alert-dismissible alert-fixed" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div id="alert-msg"></div>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,90 @@
+{% extends "Admin/base.html.twig" %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <section class="well">
+        <h1 class="text-center">Géstion des pages</h1>
+    </section>
+
+    <ol class="breadcrumb breadcrumb-arrow">
+        <li><a href="?admin/index">Home</a></li>
+        <li class=""><a href="?admin/pages">Pages</a></li>
+        <li class="active"><span>Index</span></li>
+    </ol>
+    <section id="page-list">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Liste des pages</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                    <tr>
+                        <th class="col-md-1">#</th>
+                        <th>Titre</th>
+                        <th class="col-md-1 text-center">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="page-add">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Ajouter une page</h3>
+            </div>
+            <div class="panel-body">
+                <form id="page-add-form" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <input type="text" name="add-title" id="add-title" class="form-control" placeholder="Titre"><br>
+                    <textarea id="add-editor" name="add-editor"></textarea><br>
+                    <button type="button" class="btn btn-primary">Envoyer</button>
+                </form>
+                <br>
+                <div id="messagePageAdd"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="page-edit">
+        <div id="show-edit">
+            <section id="page-add">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Modifier une page</h3>
+                    </div>
+                    <div class="panel-body-edit">
+                        <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                            <input type="hidden" id="edit-id" value="2">
+                            <input id="edit-title" type="text" name="edit-title" class="form-control" placeholder="Titre"><br>
+                            <textarea id="edit-editor" name="edit-editor"></textarea><br>
+                            <button type="button" class="btn btn-success">Modifier</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+{%  endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="js/pages-admin.js"></script>
+    <script type="text/javascript">
+        $(function() { $('textarea#add-editor').froalaEditor({
+            height: 400,
+            charCounterCount: false,
+        }) });
+
+    </script>
+    <script>
+        $(function() { $('textarea#edit-editor').froalaEditor({
+            height: 400,
+            charCounterCount: false,
+        }) });
+    </script>
+{% endblock %}

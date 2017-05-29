@@ -1,0 +1,7 @@
+.alert-fixed{position:fixed;bottom:1em;width:50%;left:25%;z-index:9999;display:none}footer{background-color:#F0F0F0;height:20em}
+
+/* mise en forme landing page */
+
+p{
+    text-align: justify;
+}
